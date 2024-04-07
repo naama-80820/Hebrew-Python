@@ -1,0 +1,114 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    ARROW
+    BANG
+    BANG_EQUAL
+    BREAK
+    CONTINUE
+    DOT
+    ELSE
+    EQUAL
+    EQUAL_EQUAL
+    GREATER
+    GREATER_EQUAL
+    IF
+    LEFT_BRACKET
+    LESS
+    LESS_EQUAL
+    MINUS
+    NONE
+    NOT
+    NUMBER
+    PLUS
+    PRINT
+    QUESTION
+    RETURN
+    RIGHT_BRACKET
+    SEMICOLON
+    SLASH
+    STAR
+    STRING
+
+Grammar
+
+Rule 0     S' -> statement
+Rule 1     statement -> IDENTIFIER
+Rule 2     statement -> reserved_words
+Rule 3     function_declaration -> DEF IDENTIFIER LEFT_PAREN parameter_list RIGHT_PAREN COLON statement
+Rule 4     for_loop -> FOR IDENTIFIER IN iterable LEFT_BRACE stmt_list RIGHT_BRACE
+Rule 5     for_loop -> FOR IDENTIFIER COMMA IDENTIFIER IN iterable LEFT_BRACE stmt_list RIGHT_BRACE
+Rule 6     while_loop -> WHILE condition LEFT_BRACE stmt_list RIGHT_BRACE
+Rule 7     iterable -> expression
+Rule 8     iterable -> range
+Rule 9     iterable -> collection
+Rule 10    range -> expression TO expression
+Rule 11    range -> expression TO expression BY expression
+Rule 12    collection -> [ items ]
+Rule 13    items -> expression
+Rule 14    items -> items COMMA expression
+
+Terminals, with rules where they appear
+
+ARROW                : 
+BANG                 : 
+BANG_EQUAL           : 
+BREAK                : 
+COLON                : 3
+COMMA                : 5 14
+CONTINUE             : 
+DEF                  : 3
+DOT                  : 
+ELSE                 : 
+EQUAL                : 
+EQUAL_EQUAL          : 
+FOR                  : 4 5
+GREATER              : 
+GREATER_EQUAL        : 
+IDENTIFIER           : 1 3 4 5 5
+IF                   : 
+IN                   : 4 5
+LEFT_BRACE           : 4 5 6
+LEFT_BRACKET         : 
+LEFT_PAREN           : 3
+LESS                 : 
+LESS_EQUAL           : 
+MINUS                : 
+NONE                 : 
+NOT                  : 
+NUMBER               : 
+PLUS                 : 
+PRINT                : 
+QUESTION             : 
+RETURN               : 
+RIGHT_BRACE          : 4 5 6
+RIGHT_BRACKET        : 
+RIGHT_PAREN          : 3
+SEMICOLON            : 
+SLASH                : 
+STAR                 : 
+STRING               : 
+WHILE                : 6
+[                    : 12
+]                    : 12
+error                : 
+
+Nonterminals, with rules where they appear
+
+BY                   : 11
+TO                   : 10 11
+collection           : 9
+condition            : 6
+expression           : 7 10 10 11 11 11 13 14
+for_loop             : 
+function_declaration : 
+items                : 12 14
+iterable             : 4 5
+parameter_list       : 3
+range                : 8
+reserved_words       : 2
+statement            : 3 0
+stmt_list            : 4 5 6
+while_loop           : 
+
