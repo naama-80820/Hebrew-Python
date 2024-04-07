@@ -1,4 +1,4 @@
-# Hebrew translator for Python
+# Hebrew transpyler for Python
 
 ##introduction
 
