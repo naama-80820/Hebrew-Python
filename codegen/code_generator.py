@@ -35,4 +35,3 @@ def generate_code(node):
     elif isinstance(node, List):
         return f"[{', '.join(generate_code(element) for element in node.elements)}]"
     return ""
-
